@@ -1,0 +1,15 @@
+project(CTRHMM)
+cmake_minimum_required(VERSION 3.5)
+set (CMAKE_CXX_STANDARD 11)
+include_directories(./src/include/eigen-eigen-323c052e1731)
+find_package(Boost 1.63.0 REQUIRED program_options)
+include_directories(${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
+set(CMAKE_CXX_FLAGS "-O2 -Wfatal-errors")
+message("## Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
+message("## Boost_LIBRARY_DIRS: ${Boost_LIBRARY_DIRS}")
+add_executable(CTRHMM src/CTRHMM.cpp
+     src/CTRHMMVariationalEstimator.cpp src/SpecialFunctions.cpp)
+add_executable(TestCTRHMM src/TestCTRHMM.cpp src/CTRHMMVETester.cpp
+     src/CTRHMMVariationalEstimator.cpp src/SpecialFunctions.cpp)
+TARGET_LINK_LIBRARIES(CTRHMM boost_program_options)
