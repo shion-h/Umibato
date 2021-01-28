@@ -82,7 +82,7 @@ qmps_filepath metadata_filepath k_min k_max
 - -m MAX_ITER, --max_iter MAX_ITER
     - The max number of iterations (default: 100).
 - -c TOL, --tol TOL
-    - - Convergence threshold (default: 1.0e-4).
+    - Convergence threshold (default: 1.0e-4).
 - -i N_INIT, --n_init N_INIT
     - The number of trials (default: 1.0e-4).
 - -j N_JOBS, --n_jobs N_JOBS
