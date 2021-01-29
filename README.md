@@ -1,7 +1,7 @@
 # Umibato
 ## Description
 Umibato is a method for estimating time-varying microbial interactions using time-series quantitative data based on the Lotka-Volterra equation.
-Details for this method are described in [this paper]().
+Details for this method are described in [this paper](https://www.biorxiv.org/content/10.1101/2021.01.28.428580v2).
 Umibato is implemented as a python Class.
 Variational inference for CTRHMM, the second step of Umibato, is written in C++.
 You can also perform Umibato on UNIX shells using run_umibato.py.
