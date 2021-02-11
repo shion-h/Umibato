@@ -47,6 +47,7 @@ class Umibato(object):
             self.output_path = output_path[:-1]
         else:
             self.output_path = output_path
+        os.makedirs(self.output_path, exist_ok=True)
 
     def fit(self, qmps, metadata):
         self._estimate_growthrates(qmps, metadata)
