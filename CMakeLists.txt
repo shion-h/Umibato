@@ -1,5 +1,5 @@
 project(CTRHMM)
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 set (CMAKE_CXX_STANDARD 11)
 include_directories(./src/include/eigen-eigen-323c052e1731)
 find_package(Boost 1.63.0 REQUIRED program_options)

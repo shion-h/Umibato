@@ -63,8 +63,10 @@ class Umibato(object):
         timepoint_list = []
         metadata_list = []
         self.model_srs_list = []
+        if set(qmps.columns) != set(metadata.index):
+            print('The QMPs column name and the metadata index name must match.')
+            sys.exit(1)
         self.metadata = metadata
-        # quantitative_microbiota_profiles
         pseudo_abundance = 10**(math.floor(np.log10(qmps[qmps!=0].min().min())))
         ln_qmps = np.log(qmps.replace(0, pseudo_abundance))
         bacteria_list = ln_qmps.index.tolist()
@@ -197,6 +199,8 @@ class Umibato(object):
     def _modify_interaction_param(self):
         for k in range(self.best_result_K):
             phi = pd.read_csv('{}/best_results/phi{}.csv'.format(self.output_path, k), header=None)
+            phi.index = self.microbe_list + ['Growth']
+            phi.columns = self.microbe_list
             modified_phi = (phi.iloc[:-1, :].T / self.x_std).T.copy()
             modified_phi0 = phi.iloc[-1, :] - phi.iloc[:-1, :].T.dot(self.x_mean/self.x_std)
             modified_phi0.name = 'Growth'
@@ -295,7 +299,7 @@ class Umibato(object):
         for k in range(self.best_result_K):
             phi[k] = pd.read_csv(('{}/best_results/phi{}.csv'
                                   .format(self.output_path, k)), 
-                                 header=None)
+                                  header=None)
             phi[k].index = self.microbe_list + ['Growth']
             phi[k].columns = self.microbe_list
         adjusted_phi = phi.copy()
@@ -313,6 +317,9 @@ class Umibato(object):
         for k, phik in enumerate(adjusted_phi):
             ax = fig.add_subplot(frn, fcn, k+1)
             plot_directed_network(phik, ax, 'State{}'.format(k+1))
+        plt.tight_layout()
+        plt.savefig('{}/figures/interaction_networks.pdf'
+                    .format(self.output_path))
 
     def _return_member_for_debug(self):
         return self.elbo_df
