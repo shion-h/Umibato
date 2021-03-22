@@ -155,6 +155,7 @@ qmps_filepath metadata_filepath k_min k_max
     - The step number of states (default: 1).
 - -g, --gp_correction
     - Use of GP correction (default: False).
+        - GP correction replace abundances (variable X) into exponentials of prediction values of GPR (e^E[f]).
     - --no_gp_correction
         - No use of GP correction.
 - -a AUGMENTATION_SIZE, --augmentation_size AUGMENTATION_SIZE
