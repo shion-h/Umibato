@@ -9,9 +9,7 @@
 
 import argparse
 import pandas as pd
-import umibato
 import importlib
-importlib.reload(umibato)
 from umibato import Umibato
 
 

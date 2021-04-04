@@ -24,4 +24,4 @@ RUN pip3 install \
 
 RUN pip3 install GPy==1.9.9
 
-RUN cmake -B build && cmake --build build
+RUN cmake -B umibato/bin && cmake --build umibato/bin

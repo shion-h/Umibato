@@ -164,9 +164,8 @@ class Umibato(object):
             _ = list(tqdm(imap, total=self.n_init))
 
     def _estimate_interactions_for_each_trial(self, t):
-        python_source_path = os.path.abspath(os.path.dirname(__file__))
-        umibato_root_path = os.path.split(python_source_path)[0]
-        ctrhmm_bin_path = os.path.join(umibato_root_path, 'build', 'CTRHMM')
+        python_source_dir = os.path.abspath(os.path.dirname(__file__))
+        ctrhmm_bin_path = os.path.join(python_source_dir, 'bin', 'CTRHMM')
         for K in self.K_list:
             condition = 'K{}'.format(K)
             trial = 'Trial{}'.format(str(t).zfill(len(str(self.n_init))))

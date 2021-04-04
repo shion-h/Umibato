@@ -13,3 +13,4 @@ add_executable(CTRHMM src/CTRHMM.cpp
 add_executable(TestCTRHMM src/TestCTRHMM.cpp src/CTRHMMVETester.cpp
      src/CTRHMMVariationalEstimator.cpp src/SpecialFunctions.cpp)
 TARGET_LINK_LIBRARIES(CTRHMM boost_program_options)
+install(TARGETS CTRHMM DESTINATION .)
