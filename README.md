@@ -51,8 +51,6 @@ This command takes 2-3 hours for 100 parallel. It takes 1 day or more to perform
 ### Notebook tutorial
 To use the tutorial notebook, you need requirements and compilations below or using Docker. 
 ## Directories
-- build
-    - an empty directory for cmake compilation
 - data
     - contains toy data for Umibato tutorials
 - notebook
@@ -89,8 +87,7 @@ To use the tutorial notebook, you need requirements and compilations below or us
 ## Compilation
 - After preparing the requirements, perform the following:
 ```
-cmake -B build
-cmake --build build
+cmake -B umibato/bin && cmake --build umibato/bin
 ```
 - Then, you can use Umibato from the root directry.
 ## Output
