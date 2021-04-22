@@ -52,7 +52,7 @@ This command takes 2-3 hours for 100 parallel. It takes 1 day or more to perform
 To use the tutorial notebook, you need requirements and compilations below or using Docker. 
 ## Directories
 - data
-    - contains toy data for Umibato tutorials
+    - contains toy data for Umibato tutorials and synthetic data used in the paper
 - notebook
     - contains the following notebooks:
         1. conduct_experiments_on_synthetic_datasets.ipynb
