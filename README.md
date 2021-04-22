@@ -54,13 +54,14 @@ To use the tutorial notebook, you need requirements and compilations below or us
 - data
     - contains toy data for Umibato tutorials
 - notebook
-    - contains a notebook for make testcases
+    - contains the following notebooks:
+        1. conduct_experiments_on_synthetic_datasets.ipynb
+        2. make_test_case.ipynb
+        3. umibato_tutorial.ipynb
 - src
-    - C++ source code for estimation of CTRHMM parameters
+    - contains C++ source code for estimation of CTRHMM parameters
 - testcase
-    - testcase data for CTRHMM implementation
-- tutorial
-    - contains a notebook for the tutorials
+    - contains testcase data for CTRHMM implementation
 - umibato
     - the Python library directory
 ## Requirements
